@@ -1,11 +1,11 @@
 
 class WeatherService{
-    jsonToObject(jsonObject, zipKey){
+    storeObject(jsonObject, zipKey){
         var zipKey = zipKey;
         var jsonObject = jsonObject;
-        var zipObject = new ZipInfo(zipKey, jsonObject.main.humidity, jsonObject.main.pressure, jsonObject.main.temp,
+        var zipObject = new ZipObject(zipKey, jsonObject.main.humidity, jsonObject.main.pressure, jsonObject.main.temp,
             jsonObject.main.temp_max, jsonObject.main.temp_min, jsonObject.sys.country);
-        console.log(zipObject);
+        zipObject.getTemperatureUnit(zipObject);
         zipStorage.setItem(zipObject.zipCode, JSON.stringify(zipObject));
         return zipObject.zipCode;
     }
@@ -19,7 +19,7 @@ class WeatherService{
         var keys = Object.keys(retrievedZipData);
         var values = Object.values(retrievedZipData);
         for (var i=1; i < keys.length; i++){
-            console.log(keys[i]);
+            // console.log(keys[i]);
             $("#displayTable").append(`<tr><td>${keys[i]}</td><td>${values[i]}</td></tr>`);
         }   
     }

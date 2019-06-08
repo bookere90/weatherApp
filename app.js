@@ -16,8 +16,8 @@ jQuery(document).ready(function() {
         xhr.onreadystatechange = function(){
             if (this.readyState == 4 && this.status == 200){
                 jsonObject = JSON.parse(this.responseText);
-                weatherService.jsonToObject(jsonObject, zipCode);
-                weatherService.displayData(weatherService.jsonToObject(jsonObject, zipCode));
+                weatherService.storeObject(jsonObject, zipCode);
+                weatherService.displayData(weatherService.storeObject(jsonObject, zipCode));
             }
         }
         xhr.open("GET", `http://api.openweathermap.org/data/2.5/weather?zip=${zipCode}` + 
