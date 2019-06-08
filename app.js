@@ -1,10 +1,14 @@
 zipStorage = window.localStorage;
 
 jQuery(document).ready(function() {
-    $('#getJSONForm').submit(getJSONData);
+
+    $( "#getJSONForm" ).submit(function( event ) {
+        $("#getJSONForm").on('submit', getJSONData());;
+        event.preventDefault();
+      });
 
     function getJSONData() {
-        const apiKey = "668a6cac8ea02dacb1cafff04454843c"
+        const apiKey = "668a6cac8ea02dacb1cafff04454843c";
         var jsonObject;
         var zipCode = document.getElementById("zipInput").value;
         var xhr = new XMLHttpRequest();
@@ -19,13 +23,13 @@ jQuery(document).ready(function() {
         "&appid=" + apiKey, true);
         xhr.send();
     }
-    
-    function jsonToObject(jsonObject, zipCode){
-        var zipCode = zipCode;
+
+    function jsonToObject(jsonObject, zipKey){
+        var zipKey = zipKey;
         var jsonObject = jsonObject;
-        var zipObject = new ZipInfo(zipCode, jsonObject.main.humidity, jsonObject.main.pressure, jsonObject.main.temp,
+        var zipObject = new ZipInfo(zipKey, jsonObject.main.humidity, jsonObject.main.pressure, jsonObject.main.temp,
             jsonObject.main.temp_max, jsonObject.main.temp_min, jsonObject.sys.country);
-        // console.log(zipObject);
+        console.log(zipObject);
         zipStorage.setItem(zipObject.zipCode, JSON.stringify(zipObject));
         return zipObject.zipCode;
     }
@@ -33,11 +37,16 @@ jQuery(document).ready(function() {
     function displayData(zipObject){
         var zipCode = zipObject;
         $("#splashWeatherData").empty();
-        $("#splashWeatherData").prepend("<table id='displayTable' border='1'><th>Hello</th></table>");
-        // console.log(JSON.parse(zipStorage.getItem(zipCode)));
+        $("#splashWeatherData").prepend(`<h2>${zipObject}</h2>`);
+        $("#splashWeatherData").append("<table id='displayTable' border='1'><body id='tableBody'></tbody></table>");
         var retrievedZipData = JSON.parse(zipStorage.getItem(zipCode));
-        for(key in Object.keys(retrievedZipData)){
-            console.log(retrievedZipData[key]);
-        }
+        var keys = Object.keys(retrievedZipData);
+        var values = Object.values(retrievedZipData);
+        for (var i=1; i < keys.length; i++){
+            console.log(keys[i]);
+            $("#displayTable").append(`<tr><td>${keys[i]}</td><td>${values[i]}</td></tr>`);
+        }   
     }
+
+
 });

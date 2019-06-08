@@ -14,6 +14,7 @@
     width: 50%;
 }
 
-.table{
-    border-color: blue;
+#displayTable{
+    border-color: black;
+    width: 50%;
 }
