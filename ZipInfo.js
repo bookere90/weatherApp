@@ -1,6 +1,7 @@
 
 class ZipInfo{
-    constructor(humidity, pressure, temperature, tempHigh, tempLow, countryName){
+    constructor(zipCode, humidity, pressure, temperature, tempHigh, tempLow, countryName){
+        this.zipCode = zipCode
         this.humidity = humidity;
         this.pressure = pressure;
         this.temperature = temperature;

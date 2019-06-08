@@ -17,8 +17,10 @@ function getJSONData() {
 }
 
 function storeObject(jsonObject, zipCode){
+    var zipCode = zipCode;
     var jsonObject = jsonObject;
-    var zipObject = new ZipInfo(jsonObject.main.humidity, jsonObject.main.pressure, jsonObject.main.temp,
+    var zipObject = new ZipInfo(zipCode, jsonObject.main.humidity, jsonObject.main.pressure, jsonObject.main.temp,
         jsonObject.main.temp_max, jsonObject.main.temp_min, jsonObject.sys.country);
     console.log(zipObject);
+    zipStorage.setItem(zipObject.zipCode, zipObject);
 }
