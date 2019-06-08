@@ -1,0 +1,11 @@
+* [33mcommit c8cb5f2ea786269efd7d9c5998285c01e04b3cc7[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+[31m|[m Author: Eric Booker <eric90booker@gmail.com>
+[31m|[m Date:   Fri Jun 7 19:34:44 2019 -0500
+[31m|[m 
+[31m|[m     completed storeObject function
+[31m|[m 
+* [33mcommit 8e1a7092fb91e4524f5af0f51df04b8707fea017[m
+  Author: Eric Booker <eric90booker@gmail.com>
+  Date:   Fri Jun 7 19:17:01 2019 -0500
+  
+      first commit

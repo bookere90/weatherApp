@@ -38,11 +38,11 @@
     <div class="container" id="topSpacing">
         <div class="row"></div>
     </div>
-    <div class="container">
+    <div class="container" id="displayArea">
         <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-sm-10" id="splashWeatherData">
-                <form onsubmit="getJSONData()">
+                <form id="getJSONForm">
                     <div class="form-group">
                         <label for="zipInput">Enter Zip Code</label>
                         <input type="text" name="zipInput" class="form-control" id="zipInput" placeholder="e.g. 77554" required>
@@ -53,6 +53,7 @@
             <div class="col-sm-1"></div>
         </div>
     </div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="app.js"></script>
     <script src="ZipInfo.js"></script>
 </body>
