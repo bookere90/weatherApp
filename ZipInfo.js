@@ -1,13 +1,12 @@
 
 class ZipObject{
-    constructor(zipCode, humidity, pressure, temperature, tempHigh, tempLow, countryName){
+    constructor(zipCode, humidity, pressure, temperature, tempHigh, tempLow){
         this.zipCode = zipCode
         this.humidity = humidity;
         this.pressure = pressure;
         this.temperature = temperature;
         this.tempHigh = tempHigh;
         this.tempLow = tempLow;
-        this.countryName = countryName;
     }
 
     getTemperatureUnit(zipObject){
