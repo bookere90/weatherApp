@@ -1,23 +1,25 @@
 
 class WeatherService{
-    storeObject(jsonObject, objectKey){
-        var objectKey = objectKey;
+    toZipObject(jsonObject, zipCode){
+        var zipCode = zipCode;
         var jsonObject = jsonObject;
-        var zipObject = new ZipObject(objectKey, jsonObject.main.humidity + "%", jsonObject.main.pressure, jsonObject.main.temp,
+        var zipObject = new ZipObject(zipCode, jsonObject.main.humidity + "%", jsonObject.main.pressure, jsonObject.main.temp,
             jsonObject.main.temp_max, jsonObject.main.temp_min);
-        // zipObject.getTemperatureUnit(zipObject);
-        return zipObject.zipCode;
+        ZipObject.getTemperatureUnit(zipObject);
+        console.log(zipObject);
+        return zipObject;
     }
     
-    displayData(zipObject){
-        var zipCode = zipObject;
-        $("#splashWeatherData").empty();
+    displayData(weatherObject){
+        var weatherObject = weatherObject;
+        console.log(weatherObject);
+        $("#displayTable").empty();
         $("#splashWeatherData").append("<table id='displayTable' border='1'><body class='tableBody'></tbody></table>");
-        $("#displayTable").prepend(`<tr id="titleRow"><td><h2 id='tableTitle'>Weather for ${zipObject}</h2></td></tr>`);
+        $("#displayTable").prepend(`<tr id="titleRow"><td><h2 id='tableTitle'>Weather for ${weatherObject.zipCode}</h2></td></tr>`);
         $("#titleRow").append("<td id='topRowRightCell'></td>")
-        var retrievedZipData = JSON.parse(zipStorage.getItem(zipCode));
-        var keys = Object.keys(retrievedZipData);
-        var values = Object.values(retrievedZipData);
+        // var retrievedZipData = JSON.parse(zipStorage.getItem(zipCode));
+        var keys = Object.keys(weatherObject);
+        var values = Object.values(weatherObject);
         for (var i=1; i < keys.length; i++){
             // console.log(keys[i]);
             $("#displayTable").append(`<tr><td>${keys[i]}</td><td>${values[i]}</td></tr>`);

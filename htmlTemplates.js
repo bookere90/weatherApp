@@ -2,6 +2,8 @@
 class TemplateManager{
 
         getWeatherTemplate(){
+            $("#splashWeatherData").empty();
+
             $("body").append(`<div class="container" id="displayArea">
             <div class="row">
                 <div class="col-sm-1"></div>
@@ -31,11 +33,11 @@ class TemplateManager{
         }
 
         getLoginTemplate(){
-            loginTemplate = $("body").append(`
+            $("body").append(`
             <div class="container" id="displayArea">
             <div class="row">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-10">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
                 <h4>Please Login</h4>
                 <form id="loginForm">
                     <div class="form-group">
@@ -53,8 +55,12 @@ class TemplateManager{
                     </div>
                 </form>
             </div>
-            <div class="col-sm-1"></div>
+            <div class="col-sm-2"></div>
             `);
+        }
+
+        getCreateAcctTemplate(){
+            
         }
 }
 
