@@ -12,7 +12,7 @@ class TemplateManager{
             <div class="col-sm-6 content" id="splashWeatherData">
                 <form id="getJSONForm">
                     <div class="form-group">
-                        <label for="zipInput">Enter Zip Code or State</label>
+                        <label for="zipInput" id="zipLabel">Enter Zip Code or State</label>
                         <input type="text" name="zipInput" class="form-control" id="searchInput" placeholder="e.g. 77554" required>
                         <div id="radioGroup" class="btn-group btn-group-toggle" data-toggle="buttons">
                             <label class="btn btn-secondary active">
