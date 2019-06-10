@@ -26,7 +26,7 @@ class TemplateManager{
                             </label>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
+                    <button type="submit" class="btn btn-primary" id="weatherButton">Submit</button>
                 </form>
             </div>
             <div class="col-sm-3"></div>
