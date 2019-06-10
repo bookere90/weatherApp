@@ -7,7 +7,7 @@ class TemplateManager{
             <div class="row">
                 <div class="col-sm-1"></div>
                 <div class="col-sm-10" id="splashWeatherData">
-                    <form id="getJSONForm" method="GET" id="onsubmit">
+                    <form id="getJSONForm">
                         <div class="form-group">
                             <label for="zipInput">Enter Zip Code or State</label>
                             <input type="text" name="zipInput" class="form-control" id="searchInput" placeholder="e.g. 77554" required>

@@ -16,6 +16,11 @@ jQuery(document).ready(function() {
             let retrievedValue = userStorage.getItem(key);      
             if(emailInput == key && passwordInput == retrievedValue){
                 TemplateManager.getWeatherTemplate();
+                $("#getJSONForm").submit((event) => {
+                    $("#getJSONForm").on('submit', getJSONData());
+                    console.log("submit success");
+                    event.preventDefault();
+                  });
             }
         });
         event.preventDefault();
@@ -25,10 +30,7 @@ jQuery(document).ready(function() {
         
     // });
 
-    $( "#getJSONForm" ).submit((event) => {
-        $("#getJSONForm").on('submit', getJSONData());;
-        event.preventDefault();
-      });
+
 
     function getJSONData() {
         const apiKey = "668a6cac8ea02dacb1cafff04454843c";
