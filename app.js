@@ -4,8 +4,6 @@ var userStorage = window.localStorage;
 userStorage.setItem('eric90booker@gmail.com', 'password');
 
 jQuery(document).ready(function() {
-    TemplateManager.getLoginTemplate();
-
     $( "#loginForm" ).submit((event) => {
         let emailInput = $('#emailInput').val();
         let passwordInput = $('#passwordInput').val();

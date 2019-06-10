@@ -11,8 +11,8 @@ class WeatherService{
     
     static displayData(weatherObject){
         var weatherObject = weatherObject;
-        $("#displayTable").empty();
-        $("#splashWeatherData").append("<table id='displayTable' border='1'><body class='tableBody'></tbody></table>");
+        $("#displayTable").remove();
+        $("#splashWeatherData").prepend("<table id='displayTable' align='center' border='1'><body class='tableBody'></tbody></table>");
         $("#displayTable").prepend(`<tr id="titleRow"><td><h2 id='tableTitle'>Weather for ${weatherObject.zipCode}</h2></td></tr>`);
         $("#titleRow").append("<td id='topRowRightCell'></td>");
         var keys = Object.keys(weatherObject);
