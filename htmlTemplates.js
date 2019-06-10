@@ -1,14 +1,13 @@
 
 class TemplateManager{
 
-        getWeatherTemplate(){
-            $("#splashWeatherData").empty();
-
+        static getWeatherTemplate(){
+            $("#displayArea").remove();
             $("body").append(`<div class="container" id="displayArea">
             <div class="row">
                 <div class="col-sm-1"></div>
                 <div class="col-sm-10" id="splashWeatherData">
-                    <form id="getJSONForm" method="GET">
+                    <form id="getJSONForm" method="GET" id="onsubmit">
                         <div class="form-group">
                             <label for="zipInput">Enter Zip Code or State</label>
                             <input type="text" name="zipInput" class="form-control" id="searchInput" placeholder="e.g. 77554" required>
@@ -32,7 +31,7 @@ class TemplateManager{
             </div>`)
         }
 
-        getLoginTemplate(){
+        static getLoginTemplate(){
             $("body").append(`
             <div class="container" id="displayArea">
             <div class="row">
@@ -41,17 +40,17 @@ class TemplateManager{
                 <h4>Please Login</h4>
                 <form id="loginForm">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <label for="emailInput">Email address</label>
+                        <input type="email" class="form-control" name="emailInput" id="emailInput" aria-describedby="emailHelp" placeholder="Enter email">
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <label for="passwordInput">Password</label>
+                        <input type="password" class="form-control" name="passwordInput" id="passwordInput" placeholder="Password">
                     </div>
                     <div>
                         <button type="submit" class="btn btn-primary">Submit</button>
-                        <button type="button" class="btn btn-link" id="createAcctBtn">Create an account</button>
+                        <button type="button"  id="createAcctButton" class="btn btn-link" id="createAcctBtn">Create an account</button>
                     </div>
                 </form>
             </div>
